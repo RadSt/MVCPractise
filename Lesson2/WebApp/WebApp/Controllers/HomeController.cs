@@ -10,16 +10,15 @@ namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private IWeapon weapon;
-
-        public HomeController(IWeapon weapon)
+        public IWeapon Weapon { get; set; }
+        public HomeController()
         {
-            this.weapon = weapon;
+            Weapon = DependencyResolver.Current.GetService<IWeapon>();
         }
-
+        // GET: Home
         public ActionResult Index()
         {
-            return View(weapon);
+            return View(Weapon);
         }
     }
 }
