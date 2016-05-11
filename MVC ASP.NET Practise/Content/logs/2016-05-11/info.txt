@@ -1,0 +1,4 @@
+2016-05-11 12:29:13.5373|INFO|MVC_ASP.NET_Practise.PreStartApp|Application Prestart
+2016-05-11 12:29:17.8033|INFO|MVC_ASP.NET_Practise.MvcApplication|Application Start
+2016-05-11 12:32:49.8400|INFO|MVC_ASP.NET_Practise.PreStartApp|Application Prestart
+2016-05-11 12:32:49.9682|INFO|MVC_ASP.NET_Practise.MvcApplication|Application Start
