@@ -63,7 +63,7 @@ namespace WebApp
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-           kernel.Bind<IRolesManager>().To<RolesManager>();
+           kernel.Bind<IUserManager>().To<UserManager>();
         }        
     }
 }

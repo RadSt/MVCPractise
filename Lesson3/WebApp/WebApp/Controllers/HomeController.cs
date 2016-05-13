@@ -13,17 +13,26 @@ namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private IRolesManager _rolesManager;
-        public HomeController(IRolesManager rolesManager)
+        private IUserManager _userManager;
+        public HomeController(IUserManager userManager)
         {
-            _rolesManager = rolesManager;
+            _userManager = userManager;
         }
         public ActionResult Index()
         {
-            _rolesManager.Save(new Role
+            _userManager.Save(new User
             {
                 Name = "Radik",
-                Code = "123"
+                Password = "123",
+                Email = "rrr@mail.ru",
+                Roles = new List<Role>
+                {
+                    new Role
+                    {
+                        Code = "Manager",
+                        Name = "Менеджер"
+                    }
+                }
             });
             return View();
         }
