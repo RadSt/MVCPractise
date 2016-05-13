@@ -6,7 +6,7 @@ namespace WebApp.Models.Abstract
     public interface IUserManager
     {
         IEnumerable<User> Users { get; }
-        bool Save(User user);
+        bool Save(User role);
         bool RemoveUser(int userId);
     }
 }
