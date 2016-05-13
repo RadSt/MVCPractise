@@ -5,20 +5,27 @@ using System.Web;
 using System.Web.Mvc;
 using Ninject;
 using WebApp.Models;
+using WebApp.Models.Abstract;
+using WebApp.Models.Concrete;
+using WebApp.Models.Enteties;
 
 namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public IWeapon Weapon { get; set; }
-        public HomeController()
+        private IRolesManager _rolesManager;
+        public HomeController(IRolesManager rolesManager)
         {
-            Weapon = DependencyResolver.Current.GetService<IWeapon>();
+            _rolesManager = rolesManager;
         }
-        // GET: Home
         public ActionResult Index()
         {
-            return View(Weapon);
+            _rolesManager.Save(new Role
+            {
+                Name = "Radik",
+                Code = "123"
+            });
+            return View();
         }
     }
 }

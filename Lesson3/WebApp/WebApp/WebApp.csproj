@@ -135,9 +135,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Bazuka.cs" />
-    <Compile Include="Models\IWeapon.cs" />
-    <Compile Include="Models\WebAppDbContext.cs" />
+    <Compile Include="Migrations\201605122039192_Migration1.cs" />
+    <Compile Include="Migrations\201605122039192_Migration1.Designer.cs">
+      <DependentUpon>201605122039192_Migration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605122040367_Migration11.cs" />
+    <Compile Include="Migrations\201605122040367_Migration11.Designer.cs">
+      <DependentUpon>201605122040367_Migration11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Abstract\IRolesManager.cs" />
+    <Compile Include="Models\Abstract\IWebAppDbContext.cs" />
+    <Compile Include="Models\Concrete\RolesManager.cs" />
+    <Compile Include="Models\Concrete\WebAppDbContext.cs" />
+    <Compile Include="Models\Enteties\Role.cs" />
+    <Compile Include="Models\Enteties\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +171,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605122039192_Migration1.resx">
+      <DependentUpon>201605122039192_Migration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605122040367_Migration11.resx">
+      <DependentUpon>201605122040367_Migration11.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
