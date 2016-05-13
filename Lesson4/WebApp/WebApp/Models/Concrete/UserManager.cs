@@ -13,6 +13,11 @@ namespace WebApp.Models.Concrete
             get { return _context.Users; }
         }
 
+        public IEnumerable<Role> Roles
+        {
+            get { return _context.Roles; }
+        } 
+
         public bool Save(User user)
         {
             if (user == null) return false;

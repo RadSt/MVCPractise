@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using WebApp.Areas.Admin;
+using WebApp.Areas.Default;
 
 namespace WebApp
 {
@@ -11,7 +13,15 @@ namespace WebApp
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+            // Register areas
+            var adminArea = new AdminAreaRegistration();
+            var adminAreaContext = new AreaRegistrationContext(adminArea.AreaName, RouteTable.Routes);
+            adminArea.RegisterArea(adminAreaContext);
+
+            var defaultArea = new DefaultAreaRegistration();
+            var defaultAreaContext = new AreaRegistrationContext(defaultArea.AreaName, RouteTable.Routes);
+            defaultArea.RegisterArea(defaultAreaContext);
+
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
