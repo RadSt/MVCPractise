@@ -7,7 +7,7 @@ namespace WebApp.Models.Abstract
     {
         IEnumerable<User> Users { get; }
         IEnumerable<Role> Roles { get; } 
-        bool Save(User role);
+        bool Save(User user);
         bool RemoveUser(int userId);
     }
 }

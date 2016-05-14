@@ -153,13 +153,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605131439559_migration.cs" />
-    <Compile Include="Migrations\201605131439559_migration.Designer.cs">
-      <DependentUpon>201605131439559_migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605131736358_migration1.cs" />
-    <Compile Include="Migrations\201605131736358_migration1.Designer.cs">
-      <DependentUpon>201605131736358_migration1.cs</DependentUpon>
+    <Compile Include="Migrations\201605140605124_Migration.cs" />
+    <Compile Include="Migrations\201605140605124_Migration.Designer.cs">
+      <DependentUpon>201605140605124_Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\IUserManager.cs" />
@@ -195,11 +191,8 @@
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605131439559_migration.resx">
-      <DependentUpon>201605131439559_migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605131736358_migration1.resx">
-      <DependentUpon>201605131736358_migration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605140605124_Migration.resx">
+      <DependentUpon>201605140605124_Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

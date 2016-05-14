@@ -14,7 +14,6 @@ namespace WebApp.Models.Enteties
         public string Code { get; set; }
         [MaxLength(50)]
         public string Name { get; set; }
-
         public ICollection<User> Users { get; set; }
     }
 }

@@ -8,6 +8,18 @@
 @using (Html.BeginForm("Register", "User", FormMethod.Post, new {@class = "form-horizontal"}))
 {
     <fieldset>
+        <div>
+            @Html.ValidationSummary()
+        </div>
+        <div class="controll-group">
+            <label class="control-label" for="Email">
+                UserName
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("UserName")
+                @Html.TextBox("UserName", Model.Email)
+            </div>
+        </div>
         <div class="controll-group">
             <label class="control-label" for="Email">
                 Email
@@ -24,6 +36,15 @@
             <div class="controls">
                 @Html.ValidationMessage("Password")
                 @Html.Password("Password", Model.Password)
+            </div>
+        </div>
+        <div class="controll-group">
+            <label class="control-label" for="FirstName">
+                Confirm Password
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("ConfirmPassword")
+                @Html.Password("ConfirmPassword", Model.Password)
             </div>
         </div>
         <div class="controll-group">
