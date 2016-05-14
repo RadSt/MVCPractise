@@ -7,6 +7,7 @@ using WebApp;
 using WebApp.Models.Abstract;
 using WebApp.Models.Concrete;
 using WebApp.Models.Enteties;
+using WebApp.Models.ViewModel;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
@@ -64,6 +65,7 @@ namespace WebApp
         private static void RegisterServices(IKernel kernel)
         {
            kernel.Bind<IUserManager>().To<UserManager>();
+            kernel.Bind<IUserRegisterView>().To<UserRegisterView>();
         }        
     }
 }

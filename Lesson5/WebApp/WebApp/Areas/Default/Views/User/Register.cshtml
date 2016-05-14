@@ -49,6 +49,16 @@
         </div>
         <div class="controll-group">
             <label class="control-label" for="FirstName">
+                Birth Date
+            </label>
+            <div class="controls">
+                @Html.DropDownList("birthdayDay", new SelectList (ViewBag.BirthdayDayCollect))
+                @Html.DropDownList("birthdayMonth", new SelectList(ViewBag.BirthdayMonthCollect))
+                @Html.DropDownList("birthdayYear", new SelectList(ViewBag.BirthdayYearCollect))
+            </div>
+        </div>
+        <div class="controll-group">
+            <label class="control-label" for="FirstName">
                 Captcha
             </label>
         </div>

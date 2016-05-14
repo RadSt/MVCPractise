@@ -24,6 +24,8 @@ namespace WebApp.Models.Enteties
         [Required(ErrorMessage = "Повторите ввод пароля")]
         [Compare("Password",ErrorMessage = "Пароли должны совпадать")]
         public string ConfirmPassword { get; set; }
+        [Required(ErrorMessage = "Введите дату рождения")]
+        public DateTime BirthdayDate { get; set; }
         [MaxLength(50)]
         public string Captcha { get; set; }
         public ICollection<Role> Roles { get; set; }

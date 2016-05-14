@@ -157,13 +157,19 @@
     <Compile Include="Migrations\201605140605124_Migration.Designer.cs">
       <DependentUpon>201605140605124_Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605141418525_Migration1.cs" />
+    <Compile Include="Migrations\201605141418525_Migration1.Designer.cs">
+      <DependentUpon>201605141418525_Migration1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\IUserManager.cs" />
+    <Compile Include="Models\Abstract\IUserRegisterView.cs" />
     <Compile Include="Models\Abstract\IWebAppDbContext.cs" />
     <Compile Include="Models\Concrete\UserManager.cs" />
     <Compile Include="Models\Concrete\WebAppDbContext.cs" />
     <Compile Include="Models\Enteties\Role.cs" />
     <Compile Include="Models\Enteties\User.cs" />
+    <Compile Include="Models\ViewModel\UserRegisterView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +199,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605140605124_Migration.resx">
       <DependentUpon>201605140605124_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605141418525_Migration1.resx">
+      <DependentUpon>201605141418525_Migration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
