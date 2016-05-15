@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WebApp.Models.Enteties.User>
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Users</h2>
+@foreach (var user in Model)
+{
+    <div>
+        <span>@user.UserName</span>
+        <span>@user.Password</span>
+        <span>@user.Email</span>
+    </div>
+}
+
+

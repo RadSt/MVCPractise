@@ -1,0 +1,79 @@
+﻿@model WebApp.Models.Enteties.User
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+@using (Html.BeginForm("Register", "User", FormMethod.Post, new {@class = "form-horizontal"}))
+{
+    <fieldset>
+        <div>
+            @Html.ValidationSummary()
+        </div>
+        <div class="controll-group">
+            <label class="control-label" for="Email">
+                UserName
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("UserName")
+                @Html.TextBox("UserName", Model.Email)
+            </div>
+        </div>
+        <div class="controll-group">
+            <label class="control-label" for="Email">
+                Email
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("Email")
+                @Html.TextBox("Email", Model.Email)
+            </div>
+        </div>
+        <div class="controll-group">
+            <label class="control-label" for="FirstName">
+                Password
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("Password")
+                @Html.Password("Password", Model.Password)
+            </div>
+        </div>
+        <div class="controll-group">
+            <label class="control-label" for="FirstName">
+                Confirm Password
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("ConfirmPassword")
+                @Html.Password("ConfirmPassword", Model.Password)
+            </div>
+        </div>
+        <div class="controll-group">
+            <label class="control-label" for="FirstName">
+                Birth Date
+            </label>
+            <div class="controls">
+                @Html.DropDownList("birthdayDay", new SelectList (ViewBag.BirthdayDayCollect))
+                @Html.DropDownList("birthdayMonth", new SelectList(ViewBag.BirthdayMonthCollect))
+                @Html.DropDownList("birthdayYear", new SelectList(ViewBag.BirthdayYearCollect))
+            </div>
+        </div>
+        <div class="controll-group">
+            <label class="control-label" for="FirstName">
+                Captcha
+            </label>
+        </div>
+        <div class="controll-group">
+            <label class="control-label" for="FirstName">
+                <img src="@Url.Action("Captcha","User")" alt="captcha" />
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("Captcha")
+                @Html.TextBox("Captcha", Model.Captcha)
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Register</button>
+            @Html.ActionLink("Cancel", "Index", null, null, new {@class = "btn"})
+        </div>
+    </fieldset>
+}
