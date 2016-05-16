@@ -64,6 +64,10 @@ namespace WebApp.Areas.Default.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (registerModel.Captcha != (string)Session[CaptchaImage.CaptchaValueKey])
+                    ModelState.AddModelError("Captcha", "Текст с картинки введен неверно!");
+
+                //        user.BirthdayDate = Convert.ToDateTime(birthdayDay + birthdayMonth + birthdayYear);
                 MembershipUser membershipUser = ((ICustomMembershipProvider)Membership.Provider).CreateUser(registerModel.UserName, registerModel.Email, registerModel.Password);
                 if (membershipUser != null)
                 {
@@ -74,40 +78,6 @@ namespace WebApp.Areas.Default.Controllers
             }
             return View(registerModel);
         }
-
-        //public ActionResult Register()
-        //{
-        //    var newUser = new User();
-        //    ViewBag.BirthdayDayCollect = _userRegisterView.BirthdayDayCollect;
-        //    ViewBag.BirthdayMonthCollect = _userRegisterView.BirthdayMonthCollect;
-        //    ViewBag.BirthdayYearCollect = _userRegisterView.BirthdayYearCollect;
-        //    return View(newUser);
-        //}
-
-        //[HttpPost]
-        //public ActionResult Register(User user, string birthdayDay, string birthdayMonth, string birthdayYear)
-        //{
-        //    if (user.Captcha != (string)Session[CaptchaImage.CaptchaValueKey] )
-        //    {
-        //        ModelState.AddModelError("Captcha","Текст с картинки введен неверно!");
-        //    }
-
-        //    var isUserExist = CustomMembershipProvider.Users.Any(p => Compare(p.UserName, user.UserName) == 0);
-
-        //    if (isUserExist)
-        //    {
-        //        ModelState.AddModelError("UserName","Пользователь с таким именем уже зарегестрирован");
-        //    }
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        user.BirthdayDate = Convert.ToDateTime(birthdayDay + birthdayMonth + birthdayYear);
-        //        CustomMembershipProvider.Save(user);
-        //    }
-
-        //    return View(user);
-        //}
-
         public ActionResult Captcha()
         {
             Session[CaptchaImage.CaptchaValueKey] = new Random(DateTime.Now.Millisecond).Next(1111, 9999).ToString();
