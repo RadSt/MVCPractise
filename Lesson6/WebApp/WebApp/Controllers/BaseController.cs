@@ -7,6 +7,6 @@ namespace WebApp.Controllers
     public abstract class BaseController : Controller
     {
        [Inject]
-       public IUserManager UserManager { get; set; }
+       public ICustomMembershipProvider CustomMembershipProvider { get; set; }
     }
 }

@@ -18,16 +18,5 @@ namespace WebApp.Models.Concrete
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            // Set the links many to many with fluent api Add New Table name
-            modelBuilder.Entity<User>()
-                .HasMany(p => p.Roles)
-                .WithMany(c => c.Users)
-                .Map(m =>
-                {
-                    m.ToTable("UserRoles");
-                });
-        }
     }
 }

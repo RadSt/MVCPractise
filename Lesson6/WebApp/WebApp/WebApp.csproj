@@ -148,33 +148,28 @@
     <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Areas\Default\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Default\Controllers\RoleController.cs" />
     <Compile Include="Areas\Default\Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605140605124_Migration.cs" />
-    <Compile Include="Migrations\201605140605124_Migration.Designer.cs">
-      <DependentUpon>201605140605124_Migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605141418525_Migration1.cs" />
-    <Compile Include="Migrations\201605141418525_Migration1.Designer.cs">
-      <DependentUpon>201605141418525_Migration1.cs</DependentUpon>
+    <Compile Include="Migrations\201605152243154_Migration.cs" />
+    <Compile Include="Migrations\201605152243154_Migration.Designer.cs">
+      <DependentUpon>201605152243154_Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Abstract\IUserManager.cs" />
-    <Compile Include="Models\Abstract\IUserRegisterView.cs" />
+    <Compile Include="Models\Abstract\ICustomMembershipProvider.cs" />
     <Compile Include="Models\Abstract\IWebAppDbContext.cs" />
-    <Compile Include="Models\Concrete\UserManager.cs" />
+    <Compile Include="Models\Concrete\CustomMembershipProvider.cs" />
     <Compile Include="Models\Concrete\WebAppDbContext.cs" />
     <Compile Include="Models\Enteties\Role.cs" />
     <Compile Include="Models\Enteties\User.cs" />
-    <Compile Include="Models\ViewModel\UserRegisterView.cs" />
+    <Compile Include="ViewModel\LogInModel.cs" />
+    <Compile Include="ViewModel\RegisterModel.cs" />
+    <Compile Include="ViewModel\UserRegisterView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\CaptchaImage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Areas\Default\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Default\Views\Home\Index.cshtml" />
@@ -182,7 +177,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Areas\Default\Views\Role\Index.cshtml" />
     <Content Include="Areas\Default\Views\User\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -195,14 +189,10 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Default\Models\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605140605124_Migration.resx">
-      <DependentUpon>201605140605124_Migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605141418525_Migration1.resx">
-      <DependentUpon>201605141418525_Migration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605152243154_Migration.resx">
+      <DependentUpon>201605152243154_Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

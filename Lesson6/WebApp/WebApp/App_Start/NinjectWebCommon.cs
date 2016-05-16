@@ -64,8 +64,7 @@ namespace WebApp
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-           kernel.Bind<IUserManager>().To<UserManager>();
-            kernel.Bind<IUserRegisterView>().To<UserRegisterView>();
+           kernel.Bind<ICustomMembershipProvider>().To<CustomMembershipProvider>();
         }        
     }
 }

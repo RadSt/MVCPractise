@@ -4,7 +4,7 @@ using WebApp.Models.Abstract;
 
 namespace WebApp.Models.ViewModel
 {
-    public class UserRegisterView : IUserRegisterView
+    public class UserRegisterView 
     {
         public int BirthdayDay { get; set; }
         public int BirthdayMonth { get; set; }

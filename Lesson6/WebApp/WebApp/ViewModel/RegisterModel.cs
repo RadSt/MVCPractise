@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApp.Models.Enteties
+namespace WebApp.ViewModel
 {
-    public class User
+    public class RegisterModel
     {
-        [Key]
         [Required(ErrorMessage = "Введите имя пользователя")]
         public string UserName { get; set; }
         [MaxLength(150)]
@@ -16,11 +14,15 @@ namespace WebApp.Models.Enteties
         [MaxLength(50)]
         [Required(ErrorMessage = "Введите пароль")]
         public string Password { get; set; }
+        [MaxLength(50)]
+        [Required(ErrorMessage = "Повторите ввод пароля")]
+        [Compare("Password", ErrorMessage = "Пароли должны совпадать")]
+        public string ConfirmPassword { get; set; }
         [Required(ErrorMessage = "Введите дату рождения")]
         public DateTime BirthdayDate { get; set; }
         [MaxLength(50)]
         public string Captcha { get; set; }
-        public int? RoleId { get; set; }
-        public Role Role { get; set; }
+
+        public bool RememberMe { get; set; }
     }
 }
