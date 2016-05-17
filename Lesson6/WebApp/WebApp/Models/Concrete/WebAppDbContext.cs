@@ -11,8 +11,8 @@ namespace WebApp.Models.Concrete
         public WebAppDbContext()
         {
             // Указывает что Нужно пересоздать БД при изменении моделей
-            Database.SetInitializer(
-                new DropCreateDatabaseIfModelChanges<WebAppDbContext>());
+            //Database.SetInitializer(
+            //    new DropCreateDatabaseIfModelChanges<WebAppDbContext>());
         }
 
         public DbSet<User> Users { get; set; }

@@ -13,10 +13,8 @@ namespace WebApp.ViewModel
         [Required(ErrorMessage = "Введите Email")]
         [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Введите почту правильного формата")]
         public string Email { get; set; }
-        [MaxLength(50)]
         [Required(ErrorMessage = "Введите пароль")]
         public string Password { get; set; }
-        [MaxLength(50)]
         [Required(ErrorMessage = "Повторите ввод пароля")]
         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "Пароли должны совпадать")]
         public string ConfirmPassword { get; set; }
@@ -35,7 +33,7 @@ namespace WebApp.ViewModel
         {
             get
             {
-                for (int i = 0; i < 32; i++)
+                for (int i = 1; i < 32; i++)
                 {
                     yield return new SelectListItem
                     {

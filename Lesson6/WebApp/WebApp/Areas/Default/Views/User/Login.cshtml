@@ -5,4 +5,33 @@
 }
 
 <h2>Login</h2>
-
+@using (Html.BeginForm("Login", "User", FormMethod.Post, new {@class = "form-horizontal"}))
+{
+    <fieldset>
+        <div>
+            @Html.ValidationSummary(false)
+        </div>
+        <legend>Вход</legend>
+        <div class="controll-group">
+            <label class="control-label" for="Email">
+                Имя пользователя
+            </label>
+            <div class="controls">
+                @Html.TextBox("UserName", Model.UserName)
+                @Html.ValidationMessage("UserName")
+            </div>
+        </div>
+        <div class="controll-group">
+            <label class="control-label" for="Password">
+                Пароль
+            </label>
+            <div class="controls">
+                @Html.Password("Password", Model.Password)
+                @Html.ValidationMessage("Password")
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Войти</button>
+        </div>
+    </fieldset>
+}

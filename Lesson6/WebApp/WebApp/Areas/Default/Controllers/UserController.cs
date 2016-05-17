@@ -25,7 +25,7 @@ namespace WebApp.Areas.Default.Controllers
         }
         public ActionResult Login()
         {
-            return View();
+            return View(new LogInModel());
         }
 
         [HttpPost]
@@ -55,7 +55,7 @@ namespace WebApp.Areas.Default.Controllers
 
         public ActionResult Register()
         {
-            return View();
+            return View(new RegisterModel());
         }
 
         [HttpPost]
@@ -65,9 +65,8 @@ namespace WebApp.Areas.Default.Controllers
             {
                 if (registerModel.Captcha != (string)Session[CaptchaImage.CaptchaValueKey])
                     ModelState.AddModelError("Captcha", "Текст с картинки введен неверно!");
-
-                //registerModel.BirthdayDate = Convert.ToDateTime(birthdayDay + birthdayMonth + birthdayYear);
-                MembershipUser membershipUser = ((ICustomMembershipProvider)Membership.Provider).CreateUser(registerModel.UserName, registerModel.Email, registerModel.Password);
+                MembershipUser membershipUser = ((ICustomMembershipProvider)Membership.Provider).CreateUser(registerModel.UserName, registerModel.Email, registerModel.Password,
+                     new DateTime(registerModel.BirthdateYear, registerModel.BirthdateMonth, registerModel.BirthdateDay));
                 if (membershipUser != null)
                 {
                     FormsAuthentication.SetAuthCookie(registerModel.UserName, false);

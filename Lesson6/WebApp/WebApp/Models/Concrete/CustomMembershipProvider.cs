@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Linq;
 using System.Web.Helpers;
 using System.Web.Security;
@@ -30,9 +32,9 @@ namespace WebApp.Models.Concrete
             }
             return isValid;
         }
-        public MembershipUser CreateUser(string userName, string email, string password)
+        public MembershipUser CreateUser(string userName, string email, string password, DateTime birthdateDate)
         {
-            MembershipUser membershipUser = GetUser(email, false);
+            MembershipUser membershipUser = GetUser(userName, false);
             if (membershipUser == null)
             {
                 try
@@ -42,10 +44,11 @@ namespace WebApp.Models.Concrete
                         User user = new User();
                         user.UserName = userName;
                         user.Email = email;
+                        user.BirthdateDate = birthdateDate;
                         user.Password = Crypto.HashPassword(password);
                         if (dbContext.Roles.Find(2) != null)
                         {
-                            user.RoleId = 2;
+                           user.RoleId = 2; ;
                         }
                         dbContext.Users.Add(user);
                         dbContext.SaveChanges();
@@ -54,9 +57,22 @@ namespace WebApp.Models.Concrete
 
                     }
                 }
-                catch (Exception)
+                //catch (DbEntityValidationException e)
+                //{
+                //    foreach (var eve in e.EntityValidationErrors)
+                //    {
+                //        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                //            eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                //        foreach (var ve in eve.ValidationErrors)
+                //        {
+                //            Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                //                ve.PropertyName, ve.ErrorMessage);
+                //        }
+                //    }
+                //}
+                catch (Exception ex)
                 {
-
+                    Debug.Write(ex.ToString());
                     return null;
                 }
             }

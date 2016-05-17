@@ -161,11 +161,24 @@
     <Compile Include="Migrations\201605171017043_Migration1.Designer.cs">
       <DependentUpon>201605171017043_Migration1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605171108396_Migration2.cs" />
+    <Compile Include="Migrations\201605171108396_Migration2.Designer.cs">
+      <DependentUpon>201605171108396_Migration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605171546304_Migration3.cs" />
+    <Compile Include="Migrations\201605171546304_Migration3.Designer.cs">
+      <DependentUpon>201605171546304_Migration3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605171749451_Migration4.cs" />
+    <Compile Include="Migrations\201605171749451_Migration4.Designer.cs">
+      <DependentUpon>201605171749451_Migration4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\ICustomMembershipProvider.cs" />
     <Compile Include="Models\Abstract\IWebAppDbContext.cs" />
     <Compile Include="Models\Concrete\CustomMembershipProvider.cs" />
     <Compile Include="Models\Concrete\WebAppDbContext.cs" />
+    <Compile Include="Models\Concrete\WebAppDbInitializer.cs" />
     <Compile Include="Models\Enteties\Role.cs" />
     <Compile Include="Models\Enteties\User.cs" />
     <Compile Include="ViewModel\LogInModel.cs" />
@@ -199,6 +212,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605171017043_Migration1.resx">
       <DependentUpon>201605171017043_Migration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605171108396_Migration2.resx">
+      <DependentUpon>201605171108396_Migration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605171546304_Migration3.resx">
+      <DependentUpon>201605171546304_Migration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605171749451_Migration4.resx">
+      <DependentUpon>201605171749451_Migration4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
