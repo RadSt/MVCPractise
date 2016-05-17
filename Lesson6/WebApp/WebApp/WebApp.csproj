@@ -175,8 +175,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\ICustomMembershipProvider.cs" />
+    <Compile Include="Models\Abstract\ICustomRoleProvider.cs" />
     <Compile Include="Models\Abstract\IWebAppDbContext.cs" />
     <Compile Include="Models\Concrete\CustomMembershipProvider.cs" />
+    <Compile Include="Models\Concrete\CustomRoleProvider.cs" />
     <Compile Include="Models\Concrete\WebAppDbContext.cs" />
     <Compile Include="Models\Concrete\WebAppDbInitializer.cs" />
     <Compile Include="Models\Enteties\Role.cs" />
