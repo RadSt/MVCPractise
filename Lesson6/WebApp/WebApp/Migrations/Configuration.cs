@@ -28,6 +28,7 @@ namespace WebApp.Migrations
                     Password = Crypto.HashPassword("Desan1986"),
                     Role = new Role
                     {
+                        RoleId = 1,
                         Name = "admin"
                     }
                 }
@@ -36,6 +37,7 @@ namespace WebApp.Migrations
             context.Roles.AddOrUpdate(
                 new Role
                 {
+                    RoleId = 2,
                     Name = "user"
                 }
                 );
