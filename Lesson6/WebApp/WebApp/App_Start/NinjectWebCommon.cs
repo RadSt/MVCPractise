@@ -7,7 +7,7 @@ using WebApp;
 using WebApp.Models.Abstract;
 using WebApp.Models.Concrete;
 using WebApp.Models.Enteties;
-using WebApp.Models.ViewModel;
+using WebApp.ViewModel;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]

@@ -5,6 +5,7 @@ namespace WebApp.Areas.Default.Controllers
 {
     public class HomeController : BaseController
     {
+        [Authorize]
         public ActionResult Index()
         {
             return View();

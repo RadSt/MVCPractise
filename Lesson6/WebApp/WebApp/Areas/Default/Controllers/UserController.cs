@@ -7,7 +7,6 @@ using System.Web.Security;
 using WebApp.Controllers;
 using WebApp.Models.Abstract;
 using WebApp.Models.Enteties;
-using WebApp.Models.ViewModel;
 using WebApp.Tools;
 using WebApp.ViewModel;
 using static System.String;
@@ -67,7 +66,7 @@ namespace WebApp.Areas.Default.Controllers
                 if (registerModel.Captcha != (string)Session[CaptchaImage.CaptchaValueKey])
                     ModelState.AddModelError("Captcha", "Текст с картинки введен неверно!");
 
-                //        user.BirthdayDate = Convert.ToDateTime(birthdayDay + birthdayMonth + birthdayYear);
+                //registerModel.BirthdayDate = Convert.ToDateTime(birthdayDay + birthdayMonth + birthdayYear);
                 MembershipUser membershipUser = ((ICustomMembershipProvider)Membership.Provider).CreateUser(registerModel.UserName, registerModel.Email, registerModel.Password);
                 if (membershipUser != null)
                 {

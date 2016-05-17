@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace WebApp.ViewModel
 {
@@ -16,13 +18,66 @@ namespace WebApp.ViewModel
         public string Password { get; set; }
         [MaxLength(50)]
         [Required(ErrorMessage = "Повторите ввод пароля")]
-        [Compare("Password", ErrorMessage = "Пароли должны совпадать")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "Пароли должны совпадать")]
         public string ConfirmPassword { get; set; }
-        [Required(ErrorMessage = "Введите дату рождения")]
-        public DateTime BirthdayDate { get; set; }
         [MaxLength(50)]
         public string Captcha { get; set; }
 
         public bool RememberMe { get; set; }
+        [Required(ErrorMessage = "Введите день рождения")]
+        public int BirthdateDay { get; set; }
+        [Required(ErrorMessage = "Введите месяц рождения")]
+        public int BirthdateMonth { get; set; }
+        [Required(ErrorMessage = "Введите год рождения")]
+        public int BirthdateYear { get; set; }
+
+        public IEnumerable<SelectListItem> BirthdateDaySelectList
+        {
+            get
+            {
+                for (int i = 0; i < 32; i++)
+                {
+                    yield return new SelectListItem
+                    {
+                        Value = i.ToString(),
+                        Text = i.ToString(),
+                        Selected = BirthdateDay == i
+                    };
+                }
+            }
+        }
+
+        public IEnumerable<SelectListItem> BirthdateMonthSelectList
+        {
+            get
+            {
+                for (int i = 1; i < 13; i++)
+                {
+                    yield return new SelectListItem
+                    {
+                        Value = i.ToString(),
+                        Text = new DateTime(2000, i, 1).ToString("MMMM"),
+                        Selected = BirthdateMonth == i
+                    };
+                }
+            }
+        }
+
+        public IEnumerable<SelectListItem> BirthdateYearSelectList
+        {
+            get
+            {
+                for (int i = 1910; i < DateTime.Now.Year; i++)
+                {
+                    yield return new SelectListItem
+                    {
+                        Value = i.ToString(),
+                        Text = i.ToString(),
+                        Selected = BirthdateYear == i
+                    };
+                }
+            }
+        } 
+
     }
 }

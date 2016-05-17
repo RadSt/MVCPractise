@@ -1,4 +1,4 @@
-﻿@model WebApp.Models.Enteties.User
+﻿@model WebApp.ViewModel.RegisterModel
 
 @{
     ViewBag.Title = "Register";
@@ -52,9 +52,9 @@
                 Birth Date
             </label>
             <div class="controls">
-                @Html.DropDownList("birthdayDay", new SelectList (ViewBag.BirthdayDayCollect))
-                @Html.DropDownList("birthdayMonth", new SelectList(ViewBag.BirthdayMonthCollect))
-                @Html.DropDownList("birthdayYear", new SelectList(ViewBag.BirthdayYearCollect))
+                @Html.DropDownList("BirthdateDay", Model.BirthdateDaySelectList)
+                @Html.DropDownList("BirthdateMonth", Model.BirthdateMonthSelectList)
+                @Html.DropDownList("BirthdateYear", Model.BirthdateYearSelectList)
             </div>
         </div>
         <div class="controll-group">
