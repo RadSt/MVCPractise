@@ -9,6 +9,9 @@ using WebApp.Models.Enteties;
 
 namespace WebApp.Models.Concrete
 {
+    /// <summary>
+    /// провайдер членства помогает системе определить, что это за пользователь, его идентифицировать
+    /// </summary>
     public class CustomMembershipProvider : MembershipProvider, ICustomMembershipProvider
     {
         public override bool ValidateUser(string username, string password)

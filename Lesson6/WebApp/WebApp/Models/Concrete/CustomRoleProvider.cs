@@ -6,6 +6,9 @@ using WebApp.Models.Enteties;
 
 namespace WebApp.Models.Concrete
 {
+    /// <summary>
+    /// провайдер ролей указывает системе на статус пользователя и наделяет его определенные правами доступа
+    /// </summary>
     public class CustomRoleProvider : RoleProvider, ICustomRoleProvider
     {
         public override string[] GetRolesForUser(string username)
