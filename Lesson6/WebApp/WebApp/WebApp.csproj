@@ -178,9 +178,11 @@
     <Compile Include="Models\Abstract\ICustomRoleProvider.cs" />
     <Compile Include="Models\Abstract\IWebAppDbContext.cs" />
     <Compile Include="Models\Concrete\CustomMembershipProvider.cs" />
+    <Compile Include="Models\Concrete\CustomProfileProvider.cs" />
     <Compile Include="Models\Concrete\CustomRoleProvider.cs" />
     <Compile Include="Models\Concrete\WebAppDbContext.cs" />
     <Compile Include="Models\Concrete\WebAppDbInitializer.cs" />
+    <Compile Include="Models\Enteties\Profile.cs" />
     <Compile Include="Models\Enteties\Role.cs" />
     <Compile Include="Models\Enteties\User.cs" />
     <Compile Include="ViewModel\LogInModel.cs" />
