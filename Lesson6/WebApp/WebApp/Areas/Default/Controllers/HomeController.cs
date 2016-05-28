@@ -8,6 +8,13 @@ namespace WebApp.Areas.Default.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            //Проверка есть ли залогенный пользователь
+            if (Request.IsAuthenticated)
+            {
+                //Имя пользователя
+                string userName = User.Identity.Name;
+                return View();
+            }
             return View();
         }
     }
